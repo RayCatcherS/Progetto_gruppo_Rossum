@@ -1,0 +1,20 @@
+concetti obbligatori:
+- incapsulamento
+- ereditarietà
+- polimorfismo
+- uso di type() per metodi variatici
+
+
+padre:
+	class Elettrodomestici() # classe astratta
+
+derivate: 
+	class Lavatrice()
+
+	class Frigorifero()
+
+Forno: 
+	
+
+
+TicketRiparazione()

@@ -56,6 +56,7 @@ class Frigorifero(Elettrodomestico):
         self.__litri = litri 
         self.__ha_freezer = ha_freezer 
 
+    # riscrittura 
     def stima_costa_base(self) -> int:
         costo = super().stima_costa_base()
 

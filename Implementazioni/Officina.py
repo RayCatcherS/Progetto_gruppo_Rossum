@@ -17,8 +17,9 @@ class Officina:
             if ticket.get_id_ticket()==id_ticket:
                 ticket.set_stato(False)
 
-    def stampa_ticket(self):
-        return 'il ticket è:', id_ticket,
+    def stampa_ticket_aperti(self):
+        for ticket in self.__tickets:
+            print ('il ticket è:', ticket.get_id_ticket(),' stato:',ticket.get_stato())
         # usare type per otttenere il tipo della classe
        
 

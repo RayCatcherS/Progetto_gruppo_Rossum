@@ -2,19 +2,45 @@ from Interfacce.Elettrodomestico import Elettrodomestico
 
 class TicketRiparazione:
     
-    def __init__(self, id_ticket: int, elettrodomestico: Elettrodomestico, stato_ticket:bool, note:list):
+    def __init__(self, id_ticket: int, elettrodomestico: Elettrodomestico, stato_ticket: str = "aperto"):
+        # Assegnazione a variabili private (Incapsulamento)
+        self.__id_ticket = id_ticket
+        self.__elettrodomestico = elettrodomestico
+        self.__stato = stato_ticket
+        self.__note = [] # Inizialmente vuota come da traccia
 
-        # assegnare a varibili private!
-        pass
+    # Getter e Setter
+    def get_id_ticket(self):
+        return self.__id_ticket
 
-    # getter and setter
+    def get_elettrodomestico(self):
+        return self.__elettrodomestico
 
-    def aggiungi_nota(self, nota:str):
+    def get_stato(self):
+        return self.__stato
+
+    def set_stato(self, nuovo_stato: str):
+        self.__stato = nuovo_stato
+
+    def get_note(self):
+        return self.__note
+
+    # Metodi operativi
+    def aggiungi_nota(self, nota: str):
+        """Append della stringa nota alla lista note"""
+        if nota:
+            self.__note.append(nota)
+
+    def calcola_preventivo(self, *voci_extra) -> float:
+        """
+        Metodo variadico: usa stima_costo_base() dell'elettrodomestico 
+        e somma tutte le voci extra passate come parametri.
+        """
+        # Polimorfismo: chiama la stima specifica (Lavatrice, Forno, ecc.)
+        totale = self.__elettrodomestico.stima_costo_base()
         
-        # append della stringa nota alle lista note
-        pass
-
-    def calcola_preventivo(self):
-
-        # chiamata dell'elettrodomestico incapsulato in self.__elettrodomestico.stima_costa_base() per calcolare preventivo
-        pass
+        # Somma tutte le voci extra passate (Variadico)
+        for costo in voci_extra:
+            totale += costo
+            
+        return totale

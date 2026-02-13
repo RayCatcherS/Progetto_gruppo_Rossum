@@ -1,11 +1,11 @@
-import Main_Stefano as ModuloElettrodomestici
+from Interfacce.Elettrodomestico import Elettrodomestico
 
 alimentazioni = {
     "gas" : 20,
     "corrente" : 50
 }
 
-class Forno(ModuloElettrodomestici.Elettrodomestico):
+class Forno(Elettrodomestico):
     def __init__(self, marca:str, modello:str, anno:int, guasto:str, tipo_alimentazione:str,ha_ventilato:bool):
         super().__init__(marca, modello,anno, guasto)
         self.__tipo_alimentazione=tipo_alimentazione
@@ -37,5 +37,3 @@ class Forno(ModuloElettrodomestici.Elettrodomestico):
 
         return costo
         
-    
-  

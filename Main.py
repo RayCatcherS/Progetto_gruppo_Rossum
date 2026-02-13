@@ -1,4 +1,4 @@
-import Main_Stefano
-import Main_Mariagrazia
-import Main_Giovanni
+from Implementazioni.Lavatrice import Lavatrice
+from Implementazioni.Forno import Forno
+from Implementazioni.Frigorifero import Frigorifero
 

@@ -1,4 +1,4 @@
-from Main_Stefano import Elettrodomestico
+from Interfacce.Elettrodomestico import Elettrodomestico
 
 class Lavatrice(Elettrodomestico):
     def __init__(self, marca: str, modello: str, anno: int, guasto: str, kg: int, giri: int):

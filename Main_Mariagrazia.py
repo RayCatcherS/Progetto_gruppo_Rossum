@@ -33,7 +33,7 @@ class Forno(ModuloElettrodomestici.Elettrodomestico):
             costo = costo + alimentazioni["corrente"] 
 
         if self.__ha_ventilato:
-            costo = 50
+            costo = costo + 50
 
         return costo
         

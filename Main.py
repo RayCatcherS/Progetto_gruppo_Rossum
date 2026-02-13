@@ -27,7 +27,7 @@ def main():
     officina = Officina("Officina Da Mario")
 
     while True: 
-        scelta = input("Scegli opzione: 1) Aggiungi ticket, 2) Chiudi ticket, 3) Stampa ticket aperti, 4) totale preventivi 5) mostra statistiche")
+        scelta = input("Scegli opzione: 1) Aggiungi ticket, 2) Chiudi ticket, 3) Stampa ticket aperti, 4) totale preventivi 5) mostra statistiche\n")
 
         if scelta == '1':
             
@@ -37,28 +37,28 @@ def main():
 
 
             while True:
-                scelta_elettr = input("Scegli opzione: 1) Lavatrice, 2) Forno, 3) Frigorifero")
+                scelta_elettr = input("Scegli opzione: 1) Lavatrice, 2) Forno, 3) Frigorifero\n")
                 if scelta_elettr == "1":
-                    marca = input("Inserisci marca: ")
-                    modello = input("Inserisci modello")
-                    anno = int(input("Inserisci anno: "))
-                    guasto = input("Inserisci guasto: ")
+                    marca = input("Inserisci marca: \n")
+                    modello = input("Inserisci modello: \n")
+                    anno = int(input("Inserisci anno: \n"))
+                    guasto = input("Inserisci guasto: \n")
 
-                    kg = int(input("Inserisci kg della lavatrice: "))
-                    giri = int(input("Inserisci giri della lavatrice"))
+                    kg = int(input("Inserisci kg della lavatrice: \n"))
+                    giri = int(input("Inserisci giri della lavatrice \n"))
                     elettrodomestico = Lavatrice(marca, modello, anno, guasto, kg, giri)
                     break
                 elif scelta_elettr == "2":
-                    marca = input("Inserisci marca: ")
-                    modello = input("Inserisci modello")
-                    anno = int(input("Inserisci anno: "))
-                    guasto = input("Inserisci guasto: ")
+                    marca = input("Inserisci marca: \n")
+                    modello = input("Inserisci modello \n")
+                    anno = int(input("Inserisci anno: \n"))
+                    guasto = input("Inserisci guasto: \n")
 
-                    tipo = input("Inserisci il tipo ventilazione")
+                    tipo = input("Inserisci il tipo ventilazione \n")
 
                     ventilato = False
                     while True:
-                        scelta_ventilato = input("Vuoi che il forno sia ventilato? (s/n)")
+                        scelta_ventilato = input("Vuoi che il forno sia ventilato? (s/n) \n")
                         if scelta_ventilato.lower() == "s":
                             ventilato = True
                             break
@@ -66,20 +66,20 @@ def main():
                             ventilato = False
                             break
                         else:
-                            print("Errore, inserisci")
+                            print("Errore, inserisci un'opzione corretta \n")
                     
                     elettrodomestico = Forno(marca, modello, anno, guasto, tipo, ventilato)
                     break
                 elif scelta_elettr == "3":
-                    marca = input("Inserisci marca: ")
-                    modello = input("Inserisci modello")
-                    anno = int(input("Inserisci anno: "))
-                    guasto = input("Inserisci guasto: ")
+                    marca = input("Inserisci marca: \n")
+                    modello = input("Inserisci modello: \n")
+                    anno = int(input("Inserisci anno: \n"))
+                    guasto = input("Inserisci guasto: \n")
 
-                    litri = int(input("Inserisci litri"))
+                    litri = int(input("Inserisci litri: \n"))
                     freezer = False
                     while True:
-                        scelta_ventilato = input("Vuoi che il frigo abbia il freezer? (s/n)")
+                        scelta_ventilato = input("Vuoi che il frigo abbia il freezer? (s/n): \n")
                         if scelta_ventilato.lower() == "s":
                             freezer = True
                             break
@@ -87,24 +87,24 @@ def main():
                             freezer = False
                             break
                         else:
-                            print("Errore, inserisci")
+                            print("Errore, inserisci un'opzione corretta \n")
 
                     elettrodomestico = Frigorifero(marca, modello, anno, guasto, litri, freezer)
                     break
                 else:
-                    print("errore scelta eletrodomestico")
+                    print("errore scelta eletrodomestico \n")
 
             
             ticket = TicketRiparazione(id_ticket, elettrodomestico, True)
             officina.aggiungi_ticket(ticket)
 
         elif scelta == "2":
-            id_ticket = int(input("Inserisci id ticket da chiudere"))
+            id_ticket = int(input("Inserisci id ticket da chiudere\n"))
             officina.chiudi_ticket(id_ticket)
         elif scelta == "3":
             officina.stampa_ticket_aperti()
         elif scelta == "4":
-            officina.totale_preventivi()
+            print("Totale preventivi: ", officina.totale_preventivi(), "\n")
         elif scelta == "5":
             statistiche_per_tipo(officina.get_tickets())
 

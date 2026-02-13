@@ -24,7 +24,7 @@ class Lavatrice(Elettrodomestico):
         self.__giri = giri
 
     # Override Polimorfismo con super()
-    def stima_costa_base(self) -> int:
+    def stima_costo_base(self) -> int:
         # Chiamiamo il metodo del padre per avere i 100 euro iniziali
         costo_partenza = super().stima_costa_base() 
         

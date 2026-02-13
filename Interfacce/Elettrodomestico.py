@@ -29,7 +29,7 @@ class Elettrodomestico():
 
     def set_anno(self, anno: int) -> bool:
         # controlla se anno > di anno attuale (system)
-        if anno < datetime.datetime.now().year:
+        if anno > datetime.datetime.now().year:
             return False
         else:
             self.__anno = anno

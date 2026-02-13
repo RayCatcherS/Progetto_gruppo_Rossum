@@ -2,10 +2,10 @@ from Interfacce.Elettrodomestico import Elettrodomestico
 
 class TicketRiparazione:
     
-    def __init__(self, id_ticket: int, elettrodomestico: Elettrodomestico, stato_ticket: str = "aperto"):
+    def __init__(self, id_ticket: int, elettrodomestico: Elettrodomestico, stato_ticket: bool = True):
         # Assegnazione a variabili private (Incapsulamento)
         self.__id_ticket = id_ticket
-        self.__elettrodomestico = elettrodomestico
+        self.__elettrodomestico: Elettrodomestico = elettrodomestico
         self.__stato = stato_ticket
         self.__note = [] # Inizialmente vuota come da traccia
 
@@ -31,7 +31,7 @@ class TicketRiparazione:
         if nota:
             self.__note.append(nota)
 
-    def calcola_preventivo(self, *voci_extra) -> float:
+    def calcola_preventivo(self, voci_extra:list) -> float:
         """
         Metodo variadico: usa stima_costo_base() dell'elettrodomestico 
         e somma tutte le voci extra passate come parametri.

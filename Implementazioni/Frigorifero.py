@@ -20,8 +20,3 @@ class Frigorifero(Elettrodomestico):
         if self.soglia_litri < self.__litri:
             costo = costo + 50
         return costo
-    
-class TicketRiparazione():
-
-    def __init__(self, ticket: int | str):
-        pass

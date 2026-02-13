@@ -13,15 +13,17 @@ class Officina:
 
 
     def chiudi_ticket(self, id_ticket):
-        # ciclare nei ticket fermarti all'id
-        pass
+        for ticket in self.__tickets:
+            if ticket.get_id_ticket()==id_ticket:
+                ticket.set_stato(False)
 
     def stampa_ticket(self):
-
+        return 'il ticket è:', id_ticket,
         # usare type per otttenere il tipo della classe
-        pass
+       
 
     def totale_preventivi(self):
+        for ticket in self.__tickets:
+            somma+=ticket.calcola_preventivo()
+            return somma
         # ciclare su tutti i ticket e sommare tutti preventivi di tutti i ticket chiamando calcola_preventivo di ticket
-
-        pass
